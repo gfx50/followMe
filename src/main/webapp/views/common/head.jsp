@@ -10,10 +10,6 @@
 		<meta name="description" content="">
 		<title>FollowMe! Trail Sharing SNS</title>
 	
-		<!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/"> -->
-	
-		
-	
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 	
 	<link href="/fm/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -91,6 +87,9 @@
 			z-index: 1500;
 		  }
 		</style>
+	<link href="/fm/resources/css/fm.css" rel="stylesheet">
+	<script src="/fm/resources/js/jquery-3.7.0.min.js"></script>
+	<script src="/fm/resources/js/fm.js"></script>
 	
 </head>
 
