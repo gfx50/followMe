@@ -3,6 +3,11 @@
 <%@ include file="../common/head.jsp" %>
 <body>
 <div class="container">
+
+<!-- 상단 고정 내비게이션 바 -->
+<%@ include file="../common/navbar.jsp" %>
+
+
 <h1>메인</h1>
 </div>
 

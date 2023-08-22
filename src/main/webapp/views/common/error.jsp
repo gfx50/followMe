@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title>Error</title>
+<%@ include file="../common/head.jsp" %>
+<!-- <head> 윗 부분은 head.jsp에서 일괄 관리합니다.
+개발용 임시 <style> <script> 는 아래 </head> 위에 작성해 주세요 -->
+
 </head>
 <body>
 <h1>오류 발생 : </h1>
@@ -22,6 +21,8 @@
 <%
 	}
 %>
-<a href="/first/index.jsp">시작페이지로 이동</a>
+<a href="/fm/menu.jsp">메뉴페이지로 이동</a>
+
+<%@ include file="../common/footer.jsp" %>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" errorPage="/fm/views/common/error.jsp"
     %>
-
+<!-- 
 		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
 		  <symbol id="check2" viewBox="0 0 16 16">
 			<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -88,6 +88,15 @@
 	  </footer>
 	</div>
 	
-
-	<script src="/fm/resources/js/bootstrap.bundle.min.js"></script>
+-->
+	<div class="container">
+	  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		<p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Team Phoenix</p>
 	
+		<a href="/fm/menu.jsp" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+		  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+		</a>
+		</footer>
+	</div>
+
+
