@@ -10,7 +10,7 @@ import member.model.vo.Member;
 public class MemberDao {
 	public MemberDao () {}
 	
-	public Member selectMember(Connection conn, String userid) {
+	public Member selectSearchUserEmail(Connection conn, String email) {
 		Member member = null;
 
 		String query = "select * from member where email = ?";
@@ -21,7 +21,7 @@ public class MemberDao {
 		try {
 			pstmt = conn.prepareStatement(query);
 
-			pstmt.setString(1, userid);
+			pstmt.setString(1, email);
 
 			rset = pstmt.executeQuery();
 
