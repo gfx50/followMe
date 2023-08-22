@@ -7,7 +7,9 @@
 
 </head>
 <body>
-<h1 align="center">기능개발용 메뉴 인덱스</h1>
+<%@ include file="views/common/navbar.jsp" %>
+
+<h1 align="center" class="container">기능개발용 메뉴 인덱스</h1>
 <ul>
 	<li><a href="views/member/profile.jsp">유저프로필</a></li>
 	<li><a href="views/member/login.jsp">로그인</a></li>

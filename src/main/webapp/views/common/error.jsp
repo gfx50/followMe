@@ -6,6 +6,9 @@
 
 </head>
 <body>
+
+<%@ include file="../common/navbar.jsp" %>
+
 <h1>오류 발생 : </h1>
 <%-- jsp 내장 객체 중 exception 객체를 사용:
 	page 지시자 태그에 isErrorPage="true" 라고 지정했을 때만 
