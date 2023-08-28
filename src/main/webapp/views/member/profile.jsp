@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="member.model.vo.Member" %>
 <%
-	Member member = (Member)request.getAttribute("member");
+	Member member = (Member)session.getAttribute("loginMember");
 %>    
 <%@ include file="../common/head.jsp" %>
 <!-- <head> 윗 부분은 head.jsp에서 일괄 관리합니다.
@@ -55,12 +55,10 @@
                     <br><br><br>
 	                    <table id="outer" align="center" width="500" >
 							<tr><th colspan="2" style="text-align:left">"닉네임(test1)"님의 회원정보입니다</th></tr>
-							<tr style="text-align:left"><th width="120">아이디</th><td>user01</td></tr>	
-							<tr style="text-align:left"><th>이름</th><td>홍길동</td></tr>
-							<tr style="text-align:left"><th>성별</th><td>남</td></tr>
-							<tr style="text-align:left"><th>나이</th><td>24</td></tr>
-							<tr style="text-align:left"><th>전화번호</th><td>010-0000-0000</td></tr>
-							<tr style="text-align:left"><th>이메일</th><td>hong@test.org</td></tr>	
+						    <tr style="text-align:left"><th>이메일</th><td><%= member.getEmail() %></td></tr>	
+							<tr style="text-align:left"><th>이름</th><td><%= member.getmName() %></td></tr>
+							<tr style="text-align:left"><th>성별</th><td><%= member.getGender() %></td></tr>
+							<tr style="text-align:left"><th>전화번호</th><td><%= member.getPhone() %></td></tr>
 							<tr style="text-align:left"><th colspan="2">
 								<button>정보 수정하기</button> &nbsp; &nbsp; &nbsp;
 								<a href="/fm/index.jsp">시작페이지로 이동</a>

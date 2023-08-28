@@ -53,4 +53,49 @@ public class MemberDao {
 		}
 		return member;
 	}
+
+	public Member selectLogin(Connection conn, String useremail, String userpwd) {
+		Member member = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = "select * from member where EMAIL = ? and PWD = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			
+			pstmt.setString(1, useremail);
+			pstmt.setString(2, userpwd);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				member = new Member();
+				
+				member.setmId(rset.getString("mid"));
+				member.setEmail(useremail);
+				member.setSocialId(rset.getString("socialid"));
+				member.setNickName(rset.getString("nickname"));
+				member.setProfilePic(rset.getString("profilepic"));
+				member.setPwd(userpwd);
+				member.setmName(rset.getString("mname"));
+				member.setBirthDate(rset.getDate("birthdate"));
+				member.setGender(rset.getString("gender"));
+				member.setPhone(rset.getNString("phone"));
+				member.setEntranceDate(rset.getDate("entrancedate"));
+				member.setLastLoginDate(rset.getDate("lastlogindate"));
+				member.setPassModifyDate(rset.getDate("passmodifydate"));
+				member.setLoginLv(rset.getInt("loginlv"));
+				member.setMemberMeta(rset.getString("membermeta"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return member;
+	}
 }

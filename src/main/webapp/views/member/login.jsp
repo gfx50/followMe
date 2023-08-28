@@ -16,15 +16,15 @@
 <main class="form-signin w-100 m-auto container">
 <h1 align="center">Welcome to the world of FollowMe!</h1>
 <hr>
- <form>
+<form action="/fm/login" method="post">
     <h2 class="h3 mb-3 fw-normal">로그인 해주세요</h2>
-
+	
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="useremail">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="userpwd">
       <label for="floatingPassword">Password</label>
     </div>
 
