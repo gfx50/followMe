@@ -23,4 +23,22 @@ public class MemberService {
 		return loginMember;
 	}
 
+	public Member selectMember(String email) {
+		Connection conn = getConnection();
+		Member member = mdao.selectMember(conn, email);
+		close(conn);
+		return member;
+	}
+
+	public int updateMember(Member member) {
+		Connection conn = getConnection();
+		int result = mdao.updateMember(conn, member);
+		if(result > 0)
+			commit(conn);
+		else
+			rollback(conn);
+		close(conn);
+		return result;
+	}
+
 }

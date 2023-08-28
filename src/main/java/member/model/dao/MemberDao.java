@@ -10,7 +10,7 @@ import member.model.vo.Member;
 public class MemberDao {
 	public MemberDao () {}
 	
-	public Member selectMember(Connection conn, String userid) {
+	public Member selectMember(Connection conn, String email) {
 		Member member = null;
 
 		String query = "select * from member where email = ?";
@@ -21,7 +21,7 @@ public class MemberDao {
 		try {
 			pstmt = conn.prepareStatement(query);
 
-			pstmt.setString(1, userid);
+			pstmt.setString(1, email);
 
 			rset = pstmt.executeQuery();
 
@@ -97,5 +97,31 @@ public class MemberDao {
 		}
 		
 		return member;
+	}
+
+	public int updateMember(Connection conn, Member member) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String query = "update member set email = ?, gender = ?, phone = ?"
+				+ " where mname = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(query);			
+			
+			pstmt.setString(1, member.getEmail());
+			pstmt.setString(2, member.getGender());
+			pstmt.setString(3, member.getPhone());
+			pstmt.setString(4, member.getmName());
+			
+			result = pstmt.executeUpdate();			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 }

@@ -26,11 +26,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">수정하기</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">내 정보 수정</a></li>
+                                <li><a class="dropdown-item" href="javascript:location.href='/fm/moveup?email=<%= member.getEmail() %>';">내 정보 수정</a></li>
                                 <!-- <li><hr class="dropdown-divider" /></li> -->
                                 <li><a class="dropdown-item" href="#!">내 게시글 수정</a></li>
                                 <li><a class="dropdown-item" href="#!">팔로우 관리</a></li>
                             </ul>
+                            
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -51,16 +52,22 @@
                     <img src="/fm/resources/images/user.png" width="150px" style="width:200px;">
                     <br><br>
                     <h1 class="display-4 fw-bolder">MyProfile</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">내프로필</p>
+                    <p class="lead fw-normal text-white-50 mb-0"><%= member.getNickName() %></p>
                     <br><br><br>
 	                    <table id="outer" align="center" width="500" >
-							<tr><th colspan="2" style="text-align:left">"닉네임(test1)"님의 회원정보입니다</th></tr>
+							<tr><th colspan="2" style="text-align:left">"<%= member.getmName() %>"님의 회원정보입니다</th></tr>
 						    <tr style="text-align:left"><th>이메일</th><td><%= member.getEmail() %></td></tr>	
 							<tr style="text-align:left"><th>이름</th><td><%= member.getmName() %></td></tr>
 							<tr style="text-align:left"><th>성별</th><td><%= member.getGender() %></td></tr>
 							<tr style="text-align:left"><th>전화번호</th><td><%= member.getPhone() %></td></tr>
+							<% if(member.getLoginLv() == 6){ %>
+							<tr style="text-align:left"><th>회원등급</th><td>프리미엄 회원</td></tr>
+							<% } %>
+							<% if(member.getLoginLv() == 7){ %>
+							<tr style="text-align:left"><th>회원등급</th><td>신</td></tr>
+							<% } %>
 							<tr style="text-align:left"><th colspan="2">
-								<button>정보 수정하기</button> &nbsp; &nbsp; &nbsp;
+								<button onclick="javascript:location.href='/fm/moveup?email=<%= member.getEmail() %>';">정보 수정하기</button> &nbsp; &nbsp; &nbsp;
 								<a href="/fm/index.jsp">시작페이지로 이동</a>
 							</th></tr>
 						</table>
@@ -71,25 +78,25 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">내 게시글1</h5>
-                                    <!-- Product price-->
-                                    contentcontentcontentcontent...
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">상세정보</a></div>
-                            </div>
-                        </div>
-                    </div>
+				                    <div class="col mb-5">
+				                        <div class="card h-100">
+				                            <!-- Product image-->
+				                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+				                            <!-- Product details-->
+				                            <div class="card-body p-4">
+				                                <div class="text-center">
+				                                    <!-- Product name-->
+				                                    <h5 class="fw-bolder">내 게시글1</h5>
+				                                    <!-- Product price-->
+				                                    contentcontentcontentcontent...
+				                                </div>
+				                            </div>
+				                            <!-- Product actions-->
+				                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+				                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">상세정보</a></div>
+				                            </div>
+				                        </div>
+				                    </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -110,26 +117,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">내 게시글3</h5>
-                                    contentcontentcontentcontent...
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">상세정보</a></div>
-                            </div>
-                        </div>
-                    </div>
+				                    <div class="col mb-5">
+				                        <div class="card h-100">
+				                            <!-- Sale badge-->
+				                            <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
+				                            <!-- Product image-->
+				                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+				                            <!-- Product details-->
+				                            <div class="card-body p-4">
+				                                <div class="text-center">
+				                                    <!-- Product name-->
+				                                    <h5 class="fw-bolder">내 게시글3</h5>
+				                                    contentcontentcontentcontent...
+				                                </div>
+				                            </div>
+				                            <!-- Product actions-->
+				                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+				                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">상세정보</a></div>
+				                            </div>
+				                        </div>
+				                    </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
@@ -236,6 +243,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="/fm/resources/js/myprofileStyle.js"></script>
+        
+        
 <%@ include file="../common/footer.jsp" %>
 </body>
 </html>
