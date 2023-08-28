@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Trail implements Serializable{
 	private static final long serialVersionUID = -5749985199797769034L;
 	
-	private String traiId;
+	private String traiIId;
 	private String mId;
 	private Date trailDate;
 	private String trailJson;
@@ -20,10 +20,10 @@ public class Trail implements Serializable{
 	
 	public Trail() {}
 
-	public Trail(String traiId, String mId, Date trailDate, String trailJson, int trailCount, int trailGood,
+	public Trail(String traiIId, String mId, Date trailDate, String trailJson, int trailCount, int trailGood,
 			String trailRange, String threadYn, String trailReport, String trailMeta) {
 		super();
-		this.traiId = traiId;
+		this.traiIId = traiIId;
 		this.mId = mId;
 		this.trailDate = trailDate;
 		this.trailJson = trailJson;
@@ -35,12 +35,12 @@ public class Trail implements Serializable{
 		this.trailMeta = trailMeta;
 	}
 
-	public String getTraiId() {
-		return traiId;
+	public String getTraiIId() {
+		return traiIId;
 	}
 
-	public void setTraiId(String traiId) {
-		this.traiId = traiId;
+	public void setTraiIId(String traiIId) {
+		this.traiIId = traiIId;
 	}
 
 	public String getmId() {
@@ -121,7 +121,7 @@ public class Trail implements Serializable{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(mId, threadYn, traiId, trailCount, trailDate, trailGood, trailJson, trailMeta, trailRange,
+		return Objects.hash(mId, threadYn, traiIId, trailCount, trailDate, trailGood, trailJson, trailMeta, trailRange,
 				trailReport);
 	}
 
@@ -135,7 +135,7 @@ public class Trail implements Serializable{
 			return false;
 		Trail other = (Trail) obj;
 		return Objects.equals(mId, other.mId) && Objects.equals(threadYn, other.threadYn)
-				&& Objects.equals(traiId, other.traiId) && trailCount == other.trailCount
+				&& Objects.equals(traiIId, other.traiIId) && trailCount == other.trailCount
 				&& Objects.equals(trailDate, other.trailDate) && trailGood == other.trailGood
 				&& Objects.equals(trailJson, other.trailJson) && Objects.equals(trailMeta, other.trailMeta)
 				&& Objects.equals(trailRange, other.trailRange) && Objects.equals(trailReport, other.trailReport);
@@ -143,7 +143,7 @@ public class Trail implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Trail [traiId=" + traiId + ", mId=" + mId + ", trailDate=" + trailDate + ", trailJson=" + trailJson
+		return "Trail [traiIId=" + traiIId + ", mId=" + mId + ", trailDate=" + trailDate + ", trailJson=" + trailJson
 				+ ", trailCount=" + trailCount + ", trailGood=" + trailGood + ", trailRange=" + trailRange
 				+ ", threadYn=" + threadYn + ", trailReport=" + trailReport + ", trailMeta=" + trailMeta + "]";
 	}

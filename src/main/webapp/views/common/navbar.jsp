@@ -8,10 +8,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-   	<li class="nav-item"><a class="nav-link" href="/fm/views/member/profile.jsp">유저프로필</a></li>
+   	<li class="nav-item"><a class="nav-link" href="/fm/myinfo">유저프로필</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/member/login.jsp">로그인</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/member/enroll.jsp">회원가입</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/main.jsp">메인</a></li>
+	<li class="nav-item"><a class="nav-link" href="/fm/tlist">메인</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/create.jsp">Trail 생성</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/search.jsp">검색</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/adm/adm.jsp">관리자 메뉴</a></li>

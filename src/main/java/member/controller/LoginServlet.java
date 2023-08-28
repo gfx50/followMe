@@ -94,7 +94,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("loginMember", loginMember);
 			
 			//로그인 성공시 내보낼 페이지 지정
-			response.sendRedirect("/fm/views/member/profile.jsp");
+			response.sendRedirect("/fm/myinfo");
 			
 		}else {  //로그인 실패
 			//클라이언트 브라우저로 내보낼 뷰 파일과 메세지 지정
