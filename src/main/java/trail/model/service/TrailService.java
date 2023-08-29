@@ -55,6 +55,38 @@ public class TrailService {
 		return list;
 	}
 
+	public ArrayList<Trail> selectFollowerList(String mid) {
+		Connection conn = getConnection();
+		ArrayList<Trail> list = tdao.selectFollowerList(conn, mid);
+		close(conn);
+		return list;
+	}
+
+	public void addReadCount(String trailId) {
+		Connection conn = getConnection();
+		int result = tdao.addReadCount(conn, trailId);
+		if(result > 0)
+			commit(conn);
+		else
+			rollback(conn);
+		close(conn);
+		
+	}
+
+	public Trail selectTrail(String trailId) {
+		Connection conn = getConnection();
+		Trail trail = tdao.selectTrail(conn, trailId);
+		close(conn);
+		return trail;
+	}
+
+	public ArrayList<Trail> selectSearchBookList(String mid) {
+		Connection conn = getConnection();
+		ArrayList<Trail> list = tdao.selectSearchBookList(conn, mid);
+		close(conn);
+		return list;
+	}
+
 
 	
 	

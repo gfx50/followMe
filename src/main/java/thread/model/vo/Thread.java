@@ -9,7 +9,16 @@ public class Thread implements Serializable{
 	private String trailId;
 	private String threadId;
 	private Date threadDate;
+	private String threadAuthor;
 	
+	public String getThreadAuthor() {
+		return threadAuthor;
+	}
+
+	public void setThreadAuthor(String threadAuthor) {
+		this.threadAuthor = threadAuthor;
+	}
+
 	public Thread() {}
 
 	public Thread(String trailId, String threadId, Date threadDate) {

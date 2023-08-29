@@ -127,7 +127,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">11<%-- <%= t.getTrailDate() %> --%></h5>
+                            <h5 class="fw-bolder"><%= t.getTrailDate() %> </h5>
                             <!-- Product price-->
                          <%= t.getTrailJson() %>
                         </div>
@@ -135,7 +135,7 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="#">상세정보</a>
+                          <a class="btn btn-outline-dark mt-auto" href="/fm/tdetail?trailId=<%= t.getTraiIId() %>">상세정보</a>
                         </div>
                     </div>
                 </div>

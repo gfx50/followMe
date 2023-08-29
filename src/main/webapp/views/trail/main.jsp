@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList, trail.model.vo.Trail"%>
+    pageEncoding="UTF-8" import="member.model.vo.Member, java.util.ArrayList, trail.model.vo.Trail"%>
 <%
+    Member member = (Member)session.getAttribute("loginMember");
     ArrayList<Trail> list = (ArrayList<Trail>)request.getAttribute("list");
 %>
 
@@ -10,7 +11,6 @@
 
         <!-- 상단 고정 내비게이션 바 -->
         <%@ include file="../common/navbar.jsp"%>
-
         <h1>메인페이지</h1>
       <% for (Trail t : list) { %>
         <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -24,8 +24,9 @@
                         <text x="50%" y="50%" fill="#dee2e6" dy=".3em" text-anchor="middle"
                             alignment-baseline="middle">이미지 불러오기</text>
                     </svg>
-                    <div class="card-body">
+                   <div class="card-body">
                         <p class="card-text">JSON 파일 : <%= t.getTrailJson() %></p>
+                        <p class="card-text">팔로워 id : <%= t.getmId() %></p>
                         <p class="card-text">조회수 : <%= t.getTrailCount() %></p>
                         <p class="card-text">좋아요수 : <%= t.getTrailGood() %></p>
                         <p class="card-text">신고처리 여부 : <%= t.getTrailReport() %></p>
@@ -33,6 +34,7 @@
                         <a href="#" class="btn btn-primary">좋아요</a>
                         <a href="#" class="btn btn-primary">북마크</a>
                         <a href="#" class="btn btn-primary">공유</a>
+                        <a href="/fm/tdetail?trailId=<%= t.getTraiIId() %>" class="btn btn-primary">상세정보</a>
                     </div>
                 </div>
             </div>
