@@ -14,6 +14,7 @@
 	<li class="nav-item"><a class="nav-link" href="/fm/tlist">메인</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/create.jsp">Trail 생성</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/search.jsp">검색</a></li>
+	<li class="nav-item"><a class="nav-link" href="/fm/msgcol">메세지</a></li>
 	<li class="nav-item"><a class="nav-link" href="/fm/views/adm/adm.jsp">관리자 메뉴</a></li>
       </ul>
       <form class="d-flex" role="search">
