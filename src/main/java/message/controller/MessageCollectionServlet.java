@@ -43,27 +43,37 @@ public class MessageCollectionServlet extends HttpServlet {
 		 */
 		
 		//request.getSession().getAttribute("loginMember");
+		
+		
 		System.out.println("불러온 session 객체 확인 : " + request.getSession().getAttribute("loginMember"));
 		
-		Member member = (Member) request.getSession().getAttribute("loginMember");
-		
-		MessageService mservice = new MessageService();
-		
-		ArrayList<Message> list = mservice.selectList(member.getmId());
-		
 		RequestDispatcher view = null;
+		if(request.getSession().getAttribute("loginMember") != null) {
 		
-		System.out.println("리스트확인 : " + list);
-		System.out.println("member확인 : " + member);
-		
-		if(list.size() > 0) {
-			view = request.getRequestDispatcher("views/message/messageList.jsp");
+			Member member = (Member) request.getSession().getAttribute("loginMember");
 			
-			request.setAttribute("list", list);
+			MessageService mservice = new MessageService();
+			
+			ArrayList<Message> list = mservice.selectList(member.getmId());
+			
+			
+			
+			System.out.println("리스트확인 : " + list);
+			System.out.println("member확인 : " + member);
+			
+			if(list.size() > 0) {
+				view = request.getRequestDispatcher("views/message/messageList.jsp");
+				
+				request.setAttribute("list", list);
+			}else {
+				view = request.getRequestDispatcher("views/common/error.jsp");
+				
+				request.setAttribute("message", "페이지에 대한 목록 조회 실패");
+			}
 		}else {
 			view = request.getRequestDispatcher("views/common/error.jsp");
 			
-			request.setAttribute("message", "페이지에 대한 목록 조회 실패");
+			request.setAttribute("message", "먼저 로그인 해주세요.");
 		}
 		
 		view.forward(request, response);

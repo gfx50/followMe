@@ -26,10 +26,10 @@
 	<button onclick="showMessageWriteForm();">메세지 보내기</button>
 </div>
 <br><br><br>
-<table align="center" border="1" cellspacing="0" width="700">
+<table align="center" border="1" cellspacing="0" width="900">
 	<tr>
 		<th>보낸사람</th>
-		<th>날짜</th>
+		<th width="120">날짜</th>
 		<th>내용</th>
 		<th>확인</th>
 	</tr>
