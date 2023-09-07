@@ -12,6 +12,9 @@ public class Message implements Serializable{
 	private String messageContent;
 	private java.sql.Date messageTime;
 	private String rcvYN;
+	private String NickName;
+	private String email;
+	private String profilepic;
 	
 	public Message() {}
 
@@ -23,6 +26,22 @@ public class Message implements Serializable{
 		this.messageContent = messageContent;
 		this.messageTime = messageTime;
 		this.rcvYN = rcvYN;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNickName() {
+		return NickName;
+	}
+
+	public void setNickName(String nickName) {
+		NickName = nickName;
 	}
 
 	public int getMsgId() {
@@ -76,12 +95,22 @@ public class Message implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public String getProfilepic() {
+		return profilepic;
+	}
+
+	public void setProfilepic(String profilepic) {
+		this.profilepic = profilepic;
+	}
 
 	@Override
 	public String toString() {
 		return "Msg [messageId=" + messageId + ", mId=" + mId + ", rcvmId=" + rcvmId + ", messageContent=" + messageContent
 				+ ", messageTime=" + messageTime + ", rcvYN=" + rcvYN + "]";
 	}
+
+	
 	
 	
 }

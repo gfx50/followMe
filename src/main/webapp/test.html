@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/fm/resources/js/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+<div id=test>
+</div>
+<script>
+for(var i = 0; i < 5; i++){
+$('#test').append('<h1>test</h1>' + (i>3?'a':'b') + '<hr>');
+}
+</script>
+</body>
+
+</html>

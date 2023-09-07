@@ -3,16 +3,21 @@
 <%@ include file="../common/head.jsp" %>
 <!-- <head> 윗 부분은 head.jsp에서 일괄 관리합니다.
 개발용 임시 <style> <script> 는 아래 </head> 위에 작성해 주세요 -->
-
+<style>
+  .centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+</style>
 </head>
 <body>
 
 <%@ include file="../common/navbar.jsp" %>
+<h1>경고 오류</h1>
+<div class="centered-image">
 
-<h1>오류 발생 : </h1>
-<%-- jsp 내장 객체 중 exception 객체를 사용:
-	page 지시자 태그에 isErrorPage="true" 라고 지정했을 때만 
-	exception 내장 객체를 사용할 수 있다 --%>
 <%
 	if(exception != null){ // jsp 페이지에서 발생한 에러이면
 %>
@@ -24,7 +29,11 @@
 <%
 	}
 %>
-<a href="/fm/menu.jsp">메뉴페이지로 이동</a>
+&nbsp;&nbsp;&nbsp;<a href="/fm/menu.jsp">메뉴페이지로 이동</a>
+  <img src="/fm/resources/images/gongsa.jpeg" alt="Image">
+</div>
+<br><br>
+
 
 <%@ include file="../common/footer.jsp" %>
 </body>

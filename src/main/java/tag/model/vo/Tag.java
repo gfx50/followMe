@@ -7,6 +7,7 @@ public class Tag implements Serializable{
 	
 	private String trailId;
 	private String tagName;
+	private int tagno;
 	
 	public Tag() {}
 
@@ -34,6 +35,16 @@ public class Tag implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	
+	
+
+	public int getTagno() {
+		return tagno;
+	}
+
+	public void setTagno(int tagno) {
+		this.tagno = tagno;
 	}
 
 	@Override

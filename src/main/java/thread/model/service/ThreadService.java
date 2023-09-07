@@ -15,12 +15,11 @@ public class ThreadService {
 	
 	public ThreadService() {}
 
-
-	public ArrayList<Thread> getThreadList() {
+	public ArrayList<Trail> selectThreadList(String trailid) {
 		Connection conn = getConnection();
-        ArrayList<Thread> threadList = thdao.getThreadList(conn);
-        close(conn);
-        return threadList;
+		ArrayList<Trail> list = thdao.selectThreadList(conn, trailid);
+		close(conn);
+		return list;
 	}
 
 

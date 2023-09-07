@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<style>
+	/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+#map {
+  height: 100%;
+}
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+	</style>
+	<script async
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=maps,marker&v=beta">
+    </script>
+     <script>
+      function initMap() {
+        console.log('Maps JavaScript API loaded.');
+      }
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    
+    <!--The div element for the map -->
+    <div id="map" class="container"><gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID"></gmp-map></div>
+	
+  </body>
+</html>

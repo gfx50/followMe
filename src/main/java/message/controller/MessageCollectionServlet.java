@@ -57,19 +57,10 @@ public class MessageCollectionServlet extends HttpServlet {
 			ArrayList<Message> list = mservice.selectList(member.getmId());
 			
 			
-			
-			System.out.println("리스트확인 : " + list);
-			System.out.println("member확인 : " + member);
-			
-			if(list.size() > 0) {
 				view = request.getRequestDispatcher("views/message/messageList.jsp");
 				
 				request.setAttribute("list", list);
-			}else {
-				view = request.getRequestDispatcher("views/common/error.jsp");
-				
-				request.setAttribute("message", "페이지에 대한 목록 조회 실패");
-			}
+			
 		}else {
 			view = request.getRequestDispatcher("views/common/error.jsp");
 			

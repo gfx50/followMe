@@ -40,7 +40,8 @@ public class MyTrailListServlet extends HttpServlet {
 		String mid = request.getParameter(member.getmId());
 		
 		// 내 게시물 최근순으로 불러오기
-		ArrayList<Trail> list = tservice.selectMyList(mid);
+		int i = 0 , j = 1; // 에러 회피용
+		ArrayList<Trail> list = tservice.selectMyList(mid,i,j);
 		System.out.println(list.toString());
 		
 

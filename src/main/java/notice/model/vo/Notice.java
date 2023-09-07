@@ -7,7 +7,7 @@ public class Notice implements Serializable{
 	private static final long serialVersionUID = 5875954839993211121L;
 	
 	private String noticeId;
-	private String admEmail;
+	private String adminEmail;
 	private String noticeTitle;
 	private String noticeContent;
 	private String fileName;
@@ -16,11 +16,11 @@ public class Notice implements Serializable{
 	
 	public Notice() {}
 
-	public Notice(String noticeId, String admEmail, String noticeTitle, String noticeContent, String fileName,
+	public Notice(String noticeId, String adminEmail, String noticeTitle, String noticeContent, String fileName,
 			Date noticeDate, String noticeCount) {
 		super();
 		this.noticeId = noticeId;
-		this.admEmail = admEmail;
+		this.adminEmail = adminEmail;
 		this.noticeTitle = noticeTitle;
 		this.noticeContent = noticeContent;
 		this.fileName = fileName;
@@ -36,12 +36,12 @@ public class Notice implements Serializable{
 		this.noticeId = noticeId;
 	}
 
-	public String getAdmEmail() {
-		return admEmail;
+	public String getAdminEmail() {
+		return adminEmail;
 	}
 
-	public void setAdmEmail(String admEmail) {
-		this.admEmail = admEmail;
+	public void setAdminEmail(String adminEmail) {
+		this.adminEmail = adminEmail;
 	}
 
 	public String getNoticeTitle() {
@@ -90,7 +90,7 @@ public class Notice implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Notice [noticeId=" + noticeId + ", admEmail=" + admEmail + ", noticeTitle=" + noticeTitle
+		return "Notice [noticeId=" + noticeId + ", adminEmail=" + adminEmail + ", noticeTitle=" + noticeTitle
 				+ ", noticeContent=" + noticeContent + ", fileName=" + fileName + ", noticeDate=" + noticeDate
 				+ ", noticeCount=" + noticeCount + "]";
 	}

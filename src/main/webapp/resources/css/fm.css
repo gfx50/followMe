@@ -1,0 +1,442 @@
+.head-div {
+    margin-top: 10px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.head-div2 {
+    margin-top: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.main-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color:#15133C;
+}
+.main-logo2 {
+    font-size: 30px;
+    font-weight: bold;
+    color:#15133C;
+}
+
+.nav-ul {
+    margin-top: 14px;
+    text-align: center;
+}
+.nav-ul2 {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.nav-li {
+    color: #6D6565;
+    font-size: 15px;
+    font-weight: bold;
+    list-style-type: none;
+    display: inline;
+    margin-right: 24px;
+    letter-spacing: 2px;
+    position: relative; /* a 태그에 상대적인 위치 설정 */
+}
+.nav-li2 {
+    color: #6D6565;
+    font-size: 15px;
+    font-weight: bold;
+    list-style-type: none;
+    display: inline;
+    margin-right: 32px;
+    letter-spacing: 2px;
+    position: relative; /* a 태그에 상대적인 위치 설정 */
+}
+
+.sub-menu {
+  display: none;
+}
+
+.sub-menu2 {
+  display: none;
+}
+
+#myProfile:hover .sub-menu {
+  display: block;
+}
+
+#myProfile:hover .sub-menu2 {
+  display: block;
+}
+
+.nav-li a {
+    text-decoration: none; /* 밑줄 없애기 */
+    color: inherit; /* 부모 요소의 색상 상속 */
+}
+.nav-li2 a {
+    text-decoration: none; /* 밑줄 없애기 */
+    color: inherit; /* 부모 요소의 색상 상속 */
+}
+
+/* .nav-li 클래스에 속한 a 태그에만 hover 상태일 때 색상 변경 */
+.nav-li:hover a {
+    color: #000; /* 검정색으로 변경 */
+}
+.nav-li2:hover a {
+    color: #000; /* 검정색으로 변경 */
+}
+
+/* .nav-li 클래스에 속한 a 태그에만 현광펜 효과 적용 */
+.nav-li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0;
+    height: 36%;
+    background-color: #EC994B;
+    z-index: -1;
+    transition: width 0.3s;
+}
+.nav-li2 a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0;
+    height: 36%;
+    background-color: #EC994B;
+    z-index: -1;
+    transition: width 0.3s;
+}
+
+.nav-li:hover a::before {
+    width: 100%;
+}
+.nav-li2:hover a::before {
+    width: 100%;
+}
+
+.nav-search {
+    position: absolute;
+    left: 90%;
+    top: 45px;
+}
+.nav-search2 {
+    position: absolute;
+    left: 90%;
+    top: 20px;
+}
+
+.search-icon {
+	margin-right:5px;
+    width: 44px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.search-icon2 {
+	margin-right:5px;
+    width: 44px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.main-logo-img{
+	position: absolute;
+    right: 90%;
+    top: 44px;
+}
+.main-logo-img2{
+	position: absolute;
+    right: 90%;
+    top: 16px;
+}
+.logo-img{
+	width: 50px;
+    margin-top: 5px;
+}
+.logo-img2{
+	width: 44px;
+    margin-top: 5px;
+}
+.logo-img3{
+	width: 44px;
+	position: relative;
+	top: -32px;
+}
+.nav-color{
+	background:#F1EEE9;
+}
+.bg-navy{
+	background: #F4F4F4;
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+.myinfo-card{
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:30px;
+	width:30%;
+	height:400px;
+	color: black;
+}
+.myinfo-card2{
+	margin-left:22%;
+	color:black;
+}
+.navbar {
+    background-color: #3498db; /* 배경색을 원하는 색상으로 변경 (예: 파란색) */
+    color: #fff; /* 텍스트 색상을 흰색으로 변경 */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 추가 */
+}
+
+.navbar-brand {
+    font-size: 24px; /* 로고 텍스트 크기 조정 */
+}
+
+/* 프로필 이미지 스타일 변경 */
+.myinfo-card img {
+    width: 150px; /* 이미지 너비 조정 */
+    height: 150px; /* 이미지 높이 조정 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    border-radius: 50%; /* 원 모양으로 변경 */
+    border: 4px solid #fff; /* 테두리 추가 */
+    background-color: #fff; /* 테두리 색상 */
+}
+
+/* 탈퇴 안내 창 스타일 변경 */
+.hidden-toast .toast {
+    width: 80%; /* 창 너비 조정 */
+    max-width: 500px; /* 최대 너비 설정 */
+    height: auto; /* 높이 자동 조정 */
+    background-color: #fff; /* 배경색을 원하는 색상으로 변경 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
+}
+
+/* 버튼 스타일 변경 */
+.hidden-toast .btn {
+    margin-top: 20px; /* 버튼 상단 마진 조정 */
+    margin-left: 10px; /* 버튼 좌측 마진 조정 */
+}
+
+/* 게시글 카드 스타일 변경 */
+.card {
+    border: 1px solid #ccc; /* 카드 테두리 추가 */
+    border-radius: 10px; /* 카드 모서리 둥글게 */
+    transition: transform 0.2s; /* 호버 시 애니메이션 효과 추가 */
+}
+
+
+.image-container {
+    background-image: url('/fm/resources/img/backeffect4.png');
+    background-size: cover;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center center; /* 이미지를 아래로 5px 이동 */
+    display: inline-block;
+    padding: 0 15px;
+    color:#15133C;
+}
+.btn{
+	border:1px solid black;
+}
+.btn-outline-edit {
+    background-color: #F4F4F4;
+    color: #15133C;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+    font-weight: bold;
+    border: 1px solid black;
+}
+.btn-outline-edit:hover {
+     box-shadow: inset 0px 5px 10px rgb(210, 210, 210);
+     color: #EC994B;
+     font-weight: bold;
+}
+.main-banner{
+	background-color: #21574d;
+	width:100%;
+	height:400px;
+	border:1px solid black;
+	overflow: hidden;
+	margin-bottom:100px;
+}
+
+
+.banner-comment{
+
+	color: white;
+	font-size:14px;
+	letter-spacing: 1px;
+}
+.background-div {
+  width: 100; 
+  height: 100%; 
+  background-image: url('/fm/resources/img/main-banner-image.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  padding-top:20px;
+  padding-left:10px;
+}
+.trail-icon{
+	background-color: #15133C;
+	margin-left:3%;
+	margin-bottom:15px;
+}
+
+
+
+
+
+
+.followee {
+ 
+   margin-top: 20px; /* 위쪽 여백 설정 */
+   top: 463px; /* 원하는 상단 간격 설정 */
+   right: 10px;
+   padding: 50px; /* 내부 여백 설정 */
+   max-width: 400px; /* 최대 너비 설정 */
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+#selectFolloweeRank {
+   width: 100%; /* 테이블 너비 100%로 설정 */
+   border-collapse: collapse; /* 테이블 셀 간 경계 없앰 */
+}
+
+#selectFolloweeRank th, #selectFolloweeRank td {
+   border: 1px solid #ccc; /* 셀 테두리 설정 */
+   padding: 8px; /* 셀 내부 여백 설정 */
+   text-align: center; /* 셀 가운데 정렬 */
+}
+
+#selectFolloweeRank th {
+   background-color: #f2f2f2; /* 헤더 배경색 설정 */
+}
+
+.weeklytag {
+   position: fixed;
+   top: 157px; /* 원하는 상단 간격 설정 */
+   right: -4px;
+   float: right; /* 오른쪽 정렬 */
+   margin-right: 20px; /* 오른쪽 여백 설정 */
+   background-color: white;
+   /* 다른 요소 위에 보이도록 설정 */
+}
+
+.selectFolloweeRank {
+   width: 200px;
+   height: 500px;
+   border: 1px solid blue;
+}
+
+
+
+
+
+
+.followee, .weeklytag {
+    background-color: #FCFCFC; /* 배경색 설정 */
+    padding: 9px; /* 안쪽 여백 설정 */
+    border-radius: 3px; /* 모서리 둥글게 만들기 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    margin-bottom: 10px; /* 아래 여백 설정 */
+}
+
+/* 제목 스타일 */
+.followee h4, .weeklytag h2 {
+    font-size: 16px; /* 제목 텍스트 크기 설정 */
+    margin-bottom: 0px; /* 아래 여백 설정 */
+    margin-top:5px;
+}
+
+/* 테이블 스타일 */
+#selectFolloweeRank, #selectTagList {
+    width: 100%; /* 테이블 너비 100% 설정 */
+    border-collapse: collapse; /* 테이블 테두리 합치기 */
+    margin-top: 6px; /* 위쪽 여백 설정 */
+}
+
+/* 테이블 셀 스타일 */
+#selectFolloweeRank th, #selectFolloweeRank td,
+#selectTagList td {
+    padding: 5px; /* 셀 안쪽 여백 설정 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    border-bottom: 1px solid #ddd; /* 아래쪽 테두리 설정 */
+}
+
+/* 짝수 행 배경색 스타일 */
+#selectFolloweeRank tr:nth-child(even),
+#selectTagList tr:nth-child(even) {
+    background-color: #FBFBFB; /* 짝수 행 배경색 설정 */
+}
+.followee a, .weeklytag a{
+	text-decoration: none;
+	 color: inherit;
+	 font-size:14px;
+}
+.followee{
+  position: fixed;
+}
+
+
+
+
+.form-group2{
+	width:340px;
+}
+.form-control2{
+	width:340px;
+}
+.button-side{
+	margin-left:5px;
+}
+.top-bar{
+	width:100%;
+	height:3px;
+	background-color:#15133C;
+}
+#map{
+	height: 600px;
+}
+.main-black-icon{
+	margin-left: 24%;
+	margin-top:3%;
+	margin-bottom:20px;
+}
+#followButtonDiv{
+	text-align: left;
+}
+.mini-user{
+	width: 20px;
+	height: 20px;
+	object-fit: cover;
+	border-radius:50%;
+}
+.none-a{
+	text-decoration: none;
+	color: inherit;
+}
+.loginborder{
+	border: white;
+}
+.idpwdbox{
+	padding-right:auto;
+	padding-left:auto;
+}
+.searchidbox{
+	margin-top: 20%;
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+	margin-left: 10%;
+}
+.searchpwdbox{
+	margin-top: 20%;
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+	margin-left: 10%;
+}

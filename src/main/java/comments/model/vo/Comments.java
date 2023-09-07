@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class Comments implements Serializable{
 	private static final long serialVersionUID = -8390641450676877655L;
-	
+
 	private String commentsId;
 	private String trailId;
 	private String mId;
@@ -13,6 +13,10 @@ public class Comments implements Serializable{
 	private int commentsType;
 	private Date commentsTime;
 	private String commentsReportYn;
+	
+	private String nickName;
+	private String profilepic;
+
 	
 	public Comments() {}
 
@@ -28,11 +32,11 @@ public class Comments implements Serializable{
 		this.commentsReportYn = commentsReportYn;
 	}
 
-	public String getCmtId() {
+	public String getCommentsId() {
 		return commentsId;
 	}
 
-	public void setCmtId(String commentsId) {
+	public void setCommentsId(String commentsId) {
 		this.commentsId = commentsId;
 	}
 
@@ -52,40 +56,55 @@ public class Comments implements Serializable{
 		this.mId = mId;
 	}
 
-	public String getCmtContent() {
+	public String getCommentsContent() {
 		return commentsContent;
 	}
 
-	public void setCmtContent(String commentsContent) {
+	public void setCommentsContent(String commentsContent) {
 		this.commentsContent = commentsContent;
 	}
 
-	public int getCmtType() {
+	public int getCommentsType() {
 		return commentsType;
 	}
 
-	public void setCmtType(int commentsType) {
+	public void setCommentsType(int commentsType) {
 		this.commentsType = commentsType;
 	}
 
-	public Date getCmtTime() {
+	public Date getCommentsTime() {
 		return commentsTime;
 	}
 
-	public void setCmtTime(Date commentsTime) {
+	public void setCommentsTime(Date commentsTime) {
 		this.commentsTime = commentsTime;
 	}
 
-	public String getCmtReportYn() {
+	public String getCommentsReportYn() {
 		return commentsReportYn;
 	}
 
-	public void setCmtReportYn(String commentsReportYn) {
+	public void setCommentsReportYn(String commentsReportYn) {
 		this.commentsReportYn = commentsReportYn;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getProfilepic() {
+		return profilepic;
+	}
+
+	public void setProfilepic(String profilepic) {
+		this.profilepic = profilepic;
 	}
 
 	@Override

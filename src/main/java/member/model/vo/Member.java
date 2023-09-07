@@ -22,6 +22,7 @@ public class Member implements Serializable{
 	private Date passModifyDate;
 	private int loginLv;
 	private String memberMeta;
+	private String followtime;
 	
 	public Member() {}
 
@@ -170,6 +171,14 @@ public class Member implements Serializable{
 		return serialVersionUID;
 	}
 
+	public String getFollowtime() {
+		return followtime;
+	}
+
+	public void setFollowtime(String followtime) {
+		this.followtime = followtime;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(birthDate, email, entranceDate, gender, lastLoginDate, loginLv, mId, mName, memberMeta,

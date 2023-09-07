@@ -1,13 +1,17 @@
 package trail.model.vo;
 
 import java.io.Serializable;
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.Objects;
+
+import book.model.dao.BookDao;
+import book.model.vo.Book;
 
 public class Trail implements Serializable{
 	private static final long serialVersionUID = -5749985199797769034L;
 	
-	private String traiIId;
+	private String trailId;
 	private String mId;
 	private Date trailDate;
 	private String trailJson;
@@ -17,13 +21,18 @@ public class Trail implements Serializable{
 	private String threadYn;
 	private String trailReport;
 	private String trailMeta;
-	
+	private String selectNickName;
+	private String tagName;
+	private String originFileName;
+	private String nickName;
 	public Trail() {}
 
-	public Trail(String traiIId, String mId, Date trailDate, String trailJson, int trailCount, int trailGood,
-			String trailRange, String threadYn, String trailReport, String trailMeta) {
+
+	public Trail(String trailId, String mId, Date trailDate, String trailJson, int trailCount, int trailGood,
+			String trailRange, String threadYn, String trailReport, String trailMeta, String selectNickName,
+			String tagName) {
 		super();
-		this.traiIId = traiIId;
+		this.trailId = trailId;
 		this.mId = mId;
 		this.trailDate = trailDate;
 		this.trailJson = trailJson;
@@ -33,14 +42,35 @@ public class Trail implements Serializable{
 		this.threadYn = threadYn;
 		this.trailReport = trailReport;
 		this.trailMeta = trailMeta;
+		this.selectNickName = selectNickName;
+		this.tagName = tagName;
 	}
 
-	public String getTraiIId() {
-		return traiIId;
+
+
+
+	public String getNickName() {
+		return nickName;
 	}
 
-	public void setTraiIId(String traiIId) {
-		this.traiIId = traiIId;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getOriginFileName() {
+		return originFileName;
+	}
+
+	public void setOriginFileName(String originFileName) {
+		this.originFileName = originFileName;
+	}
+
+	public String getTrailId() {
+		return trailId;
+	}
+
+	public void setTrailId(String trailId) {
+		this.trailId = trailId;
 	}
 
 	public String getmId() {
@@ -118,10 +148,35 @@ public class Trail implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public String getSelectNickName() {
+		return selectNickName;
+	}
+
+
+
+	public void setSelectNickName(String selectNickName) {
+		this.selectNickName = selectNickName;
+	}
+
+	public String getTagName() {
+		return tagName;
+	}
+
+
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+	}
+
+
+
+
+
+
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(mId, threadYn, traiIId, trailCount, trailDate, trailGood, trailJson, trailMeta, trailRange,
+		return Objects.hash(mId, threadYn, trailId, trailCount, trailDate, trailGood, trailJson, trailMeta, trailRange,
 				trailReport);
 	}
 
@@ -135,18 +190,23 @@ public class Trail implements Serializable{
 			return false;
 		Trail other = (Trail) obj;
 		return Objects.equals(mId, other.mId) && Objects.equals(threadYn, other.threadYn)
-				&& Objects.equals(traiIId, other.traiIId) && trailCount == other.trailCount
+				&& Objects.equals(trailId, other.trailId) && trailCount == other.trailCount
 				&& Objects.equals(trailDate, other.trailDate) && trailGood == other.trailGood
 				&& Objects.equals(trailJson, other.trailJson) && Objects.equals(trailMeta, other.trailMeta)
 				&& Objects.equals(trailRange, other.trailRange) && Objects.equals(trailReport, other.trailReport);
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Trail [traiIId=" + traiIId + ", mId=" + mId + ", trailDate=" + trailDate + ", trailJson=" + trailJson
+		return "Trail [trailId=" + trailId + ", mId=" + mId + ", trailDate=" + trailDate + ", trailJson=" + trailJson
 				+ ", trailCount=" + trailCount + ", trailGood=" + trailGood + ", trailRange=" + trailRange
-				+ ", threadYn=" + threadYn + ", trailReport=" + trailReport + ", trailMeta=" + trailMeta + "]";
+				+ ", threadYn=" + threadYn + ", trailReport=" + trailReport + ", trailMeta=" + trailMeta
+				+ ", selectNickName=" + selectNickName + ", tagName=" + tagName + "]";
 	}
+
+
 	
-	
-}
+	}
+

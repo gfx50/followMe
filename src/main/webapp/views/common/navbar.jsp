@@ -1,62 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="member.model.vo.Member" %>
-
+	pageEncoding="UTF-8"
+	import="member.model.vo.Member, java.util.ArrayList, trail.model.vo.Trail, follow.model.vo.Follow" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 <%
-	//로그인 확인을 위해서 내장된 session 객체를 이용
 	Member loginMember = (Member)session.getAttribute("loginMember");
-%>    
 
-<% if(loginMember == null){  //로그인하지 않았을 때 %>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/fm/">FollowMe</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-   	<li class="nav-item"><a class="nav-link" href="/fm/views/member/login.jsp">유저프로필</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/member/login.jsp">로그인</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/member/enroll.jsp">회원가입</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/tlist">메인</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/create.jsp">Trail 생성</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/search.jsp">검색</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/msgcol">메세지</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/adm/adm.jsp">관리자 메뉴</a></li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<% }else{ //일반회원이 로그인 했을 때 %>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/fm/">FollowMe</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-   	<li class="nav-item"><a class="nav-link" href="/fm/myinfo">유저프로필</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/tlist">메인</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/tflist">팔로워게시글</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/tbook">북마크게시글</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/create.jsp">Trail 생성</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/trail/search.jsp">검색</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/msgcol">메세지</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/views/adm/adm.jsp">관리자 메뉴</a></li>
-	<li class="nav-item"><a class="nav-link" href="/fm/logout">로그아웃</a></li>
-	
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<% } %>
+%>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.querySelectorAll(".nav-li a");
+
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener("mouseover", function (event) {
+                this.classList.add("highlighted");
+            });
+
+            navLinks[i].addEventListener("mouseout", function (event) {
+                this.classList.remove("highlighted");
+            });
+        }
+    });
+</script>
+<div class="top-bar"></div>
+<div class="head-div2">
+	<div class="nav-div2 container">
+		<ul class="nav-ul2">
+			<li class="nav-li2"><a href="/fm/tlist">HOME</a></li>
+			<li class="nav-li2"><a href="/fm/views/trail/create.jsp">TRAIL</a></li>
+			<li class="nav-li2"><a href="/fm/msgcol">MESSAGE</a></li>
+			<li class="nav-li2"><a href="/fm/flist?mid=<%= loginMember.getmId() %>">FOLLOW</a></li>
+			<li class="nav-li2" id="myProfile"><a href="/fm/myinfo">MYPROFILE</a></li>
+			<li class="nav-li2"><a href="/fm/nlist">NOTICE</a></li>
+		</ul>
+	</div>
+	<div class="nav-search2">
+	<img class="search-icon2" src="/fm/resources/img/search.jpeg" onclick="search();">
+	<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16" onclick="logout();" style="cursor: pointer;">
+	    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+	    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+	</svg>
+	</svg>
+	</div>
+	<div class="main-logo-img2">
+		<a href="/fm/pheonix.jsp"><img class="logo-img2" src="/fm/resources/img/Followmelogo.png"></a>
+	</div>
+</div>
+<hr>
+
+<script type="text/javascript">
+function logout(){
+	location.href="/fm/logout"
+}
+function search(){
+	location.href="/fm/views/trail/search.jsp"
+}
+</script>
+
 

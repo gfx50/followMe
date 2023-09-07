@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="member.model.vo.Member" %>
-<%
-	//로그인 확인을 위해서 내장된 session 객체를 이용
-	Member loginMember = (Member)session.getAttribute("loginMember");
-%> 
 
 
 <%@ include file="views/common/head.jsp" %>
@@ -13,7 +9,6 @@
 </head>
 <body>
 <%@ include file="views/common/navbar.jsp" %>
-
 
 
 <h1 align="center">기능개발용 메뉴 인덱스</h1>
